@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="412.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.gui.MainController">
+   <VBox prefHeight="409.0" prefWidth="600.0">
+      <children>
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <TextField fx:id="txtWordSearch" prefHeight="26.0" prefWidth="515.0">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin>
+               </TextField>
+               <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#onSearchClick" text="Search">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <RadioButton fx:id="rbtnWholeWord" mnemonicParsing="false" onAction="#rbtnWholeWordOnAction" selected="true" text="Whole word">
+                  <HBox.margin>
+                     <Insets top="5.0" />
+                  </HBox.margin></RadioButton>
+               <RadioButton fx:id="rbtnPartOfWord" mnemonicParsing="false" onAction="#rbtnPartOfWordOnAction" text="Part of word">
+                  <HBox.margin>
+                     <Insets left="10.0" top="5.0" />
+                  </HBox.margin>
+               </RadioButton>
+               <Button fx:id="btnClearSearchResult" disable="true" mnemonicParsing="false" onAction="#onClearSearchResult" text="Clear search result">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+               <Insets left="10.0" top="5.0" />
+            </VBox.margin></HBox>
+         <Separator prefWidth="200.0">
+            <VBox.margin>
+               <Insets bottom="5.0" top="5.0" />
+            </VBox.margin>
+         </Separator>
+         <HBox prefHeight="425.0" prefWidth="600.0">
+            <children>
+               <VBox prefHeight="358.0" prefWidth="209.0">
+                  <children>
+                     <Label text="Words">
+                        <VBox.margin>
+                           <Insets left="10.0" top="5.0" />
+                        </VBox.margin>
+                        <font>
+                           <Font name="Arial Black" size="11.0" />
+                        </font>
+                     </Label>
+                     <ListView fx:id="lstAllWords" onMouseClicked="#lstAllWordsOnMouseClick" prefHeight="335.0" prefWidth="199.0">
+                        <VBox.margin>
+                           <Insets left="10.0" />
+                        </VBox.margin>
+                     </ListView>
+                  </children>
+               </VBox>
+               <VBox prefHeight="358.0" prefWidth="390.0">
+                  <children>
+                     <HBox prefHeight="153.0" prefWidth="298.0">
+                        <children>
+                           <VBox prefHeight="143.0" prefWidth="194.0">
+                              <children>
+                                 <Label text="Words beginning with 'A'">
+                                    <font>
+                                       <Font name="Arial Black" size="11.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets top="5.0" />
+                                    </VBox.margin>
+                                 </Label>
+                                 <ListView fx:id="lstWordsWithA" prefHeight="126.0" prefWidth="175.0">
+                                    <VBox.margin>
+                                       <Insets />
+                                    </VBox.margin>
+                                 </ListView>
+                                 <Button mnemonicParsing="false" onAction="#onBtnReadAClick" prefHeight="26.0" prefWidth="190.0" text="Read">
+                                    <VBox.margin>
+                                       <Insets top="5.0" />
+                                    </VBox.margin>
+                                 </Button>
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="143.0" prefWidth="196.0">
+                              <children>
+                                 <Label text="Words beginning with 'N'">
+                                    <font>
+                                       <Font name="Arial Black" size="11.0" />
+                                    </font>
+                                    <VBox.margin>
+                                       <Insets top="5.0" />
+                                    </VBox.margin>
+                                 </Label>
+                                 <ListView fx:id="lstWordsWithN" prefHeight="126.0" prefWidth="214.0" />
+                                 <Button mnemonicParsing="false" onAction="#onBtnReadNClick" prefHeight="26.0" prefWidth="190.0" text="Read">
+                                    <VBox.margin>
+                                       <Insets top="5.0" />
+                                    </VBox.margin>
+                                 </Button>
+                              </children>
+                              <padding>
+                                 <Insets right="10.0" />
+                              </padding>
+                              <HBox.margin>
+                                 <Insets left="10.0" />
+                              </HBox.margin>
+                           </VBox>
+                        </children>
+                        <VBox.margin>
+                           <Insets left="10.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <Label text="History">
+                        <font>
+                           <Font name="Arial Black" size="11.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets left="10.0" top="5.0" />
+                        </VBox.margin>
+                     </Label>
+                     <ListView fx:id="lstHistory" prefHeight="165.0" prefWidth="370.0">
+                        <VBox.margin>
+                           <Insets bottom="5.0" left="10.0" right="10.0" />
+                        </VBox.margin>
+                     </ListView>
+                     <Button mnemonicParsing="false" onAction="#onClearHistoryClick" prefHeight="26.0" prefWidth="389.0" text="Clear history">
+                        <VBox.margin>
+                           <Insets left="10.0" right="10.0" />
+                        </VBox.margin>
+                     </Button>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <Label text="Total word count:">
+                  <HBox.margin>
+                     <Insets left="10.0" top="5.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="Arial Black" size="11.0" />
+                  </font>
+               </Label>
+               <Label fx:id="lblTotalWordCount" text="&lt;WordCount&gt;">
+                  <HBox.margin>
+                     <Insets left="5.0" top="5.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="Arial" size="11.0" />
+                  </font>
+               </Label>
+               <Label text="Search result:">
+                  <HBox.margin>
+                     <Insets left="10.0" top="5.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="Arial Black" size="11.0" />
+                  </font>
+               </Label>
+               <Label fx:id="lblSearchResult" text="&lt;SearchResult&gt;">
+                  <HBox.margin>
+                     <Insets left="5.0" top="5.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="Arial" size="11.0" />
+                  </font>
+               </Label>
+               <Label layoutX="210.0" layoutY="15.0" text="Selected word:">
+                  <font>
+                     <Font name="Arial Black" size="11.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="10.0" top="5.0" />
+                  </HBox.margin>
+               </Label>
+               <Label fx:id="lblSelectedWord" layoutX="300.0" layoutY="15.0" text="&lt;SelectedWord&gt;">
+                  <font>
+                     <Font name="Arial" size="11.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="5.0" top="5.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+
+</AnchorPane>
